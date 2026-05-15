@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Antigravity Websites</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Gradient Effects -->
+    <div class="bg-glow glow-top-left"></div>
+    <div class="bg-glow glow-bottom-right"></div>
+    <div class="bg-glow glow-middle-left"></div>
+
+    <!-- Navigation Area -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-symbol">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" stroke="#8B5CF6" stroke-width="2" />
+                    <path d="M25 75L45 25L55 75L75 25" stroke="white" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <circle cx="45" cy="25" r="4" fill="#00D2FF" />
+                    <circle cx="55" cy="75" r="4" fill="#00D2FF" />
+                </svg>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Work</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search website..." id="siteSearch">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+            <button class="icon-btn mobile-menu-toggle" aria-label="Menu">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <header class="home-hero">
+        <div class="home-hero-container services-hero-container">
+            <!-- Floating Background Elements -->
+            <div class="hero-floating-elements">
+                <div class="floating-item item-1">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                    </svg>
+                </div>
+                <div class="floating-item item-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                </div>
+                <div class="floating-item item-3">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M4.5 16.5c-1.5 1.26-2 2.67-2 3.5 0 1.21.95 2 2 2h15c1.1 0 2-.79 2-2 0-.83-.5-2.24-2-3.5">
+                        </path>
+                        <path d="M19 10l-6 4 2 2-6 4"></path>
+                        <path d="M4.5 16.5c0-1 1.5-6 1.5-6s1.5-3 1.5-4.5a1.5 1.5 0 0 1 3 0c0 1.5 1.5 4.5 1.5 4.5s1.5 5 1.5 6">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="home-hero-inner">
+                <div class="hero-left-col animate-up">
+                    <h1>OUR WEB SOLUTIONS</h1>
+                    <p class="hero-subtitle" style="margin-bottom: 0;">We Build Worlds, Not Websites.</p>
+                </div>
+                <div class="hero-right-col animate-up" style="animation-delay: 0.2s;">
+                    <p class="hero-premium-text">Premium immersive web <br> experiences for founders, <br> coaches, and
+                        SaaS startups.<br> Delivered in days — not months.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Packages Section -->
+    <section class="packages-section section-padding" id="packages">
+        <div class="section-header text-center pt-spacing">
+            <h2>OUR PACKAGES</h2>
+            <p>Every package is a launchpad. Pick the one<br> that matches your vision and we handle everything else.
+            </p>
+        </div>
+
+        <div class="packages-grid">
+            <!-- Package 1: Starter -->
+            <div class="package-card">
+                <h3>⚡ STARTER PACKAGE</h3>
+                <div class="price">$199 &middot; <span>36 Hour Delivery</span></div>
+                <p class="package-desc">"Launch fast. Look premium."</p>
+                <ul class="package-features">
+                    <li>✓ 1 Landing Page</li>
+                    <li>✓ Floating UI Effects</li>
+                    <li>✓ Mobile Responsive</li>
+                    <li>✓ Contact Form</li>
+                    <li>✓ 1 Revision Round</li>
+                </ul>
+                <a href="contact.html#contact-info" class="package-btn">Get Started &rarr;</a>
+            </div>
+
+            <!-- Package 2: Professional (Highlighted) -->
+            <div class="package-card highlighted-card">
+                <h3>🚀 MOST POPULAR</h3>
+                <div class="price">$699 &middot; <span>4 Day Delivery</span></div>
+                <p class="package-desc">"Everything you need to convert."</p>
+                <ul class="package-features">
+                    <li>✓ Up to 5 Pages</li>
+                    <li>✓ Everything in Pulse</li>
+                    <li>✓ Blog Setup</li>
+                    <li>✓ SEO Foundation</li>
+                    <li>✓ 3 Revision Rounds</li>
+                </ul>
+                <a href="contact.html#contact-info" class="package-btn">Get Started &rarr;</a>
+            </div>
+
+            <!-- Package 3: Empire -->
+            <div class="package-card">
+                <h3>🏆 EMPIRE PACKAGE</h3>
+                <div class="price">$999 &middot; <span>6 Day Delivery</span></div>
+                <p class="package-desc">"Your digital empire. Built to dominate."</p>
+                <ul class="package-features">
+                    <li>✓ 7+ Pages</li>
+                    <li>✓ Everything in Core</li>
+                    <li>✓ Custom Animations</li>
+                    <li>✓ Priority Support</li>
+                    <li>✓ Launch Strategy Call</li>
+                </ul>
+                <a href="contact.html#contact-info" class="package-btn">Get Started &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline Section -->
+    <section class="process-section section-padding" id="process">
+        <div class="hero-divider"></div>
+        <div class="process-container pt-spacing pb-spacing">
+            <div class="process-text-col">
+                <h2>OUR PROCESS</h2>
+                <p>We follow a streamlined process to deliver your vision quickly and efficiently.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-circle">
+                        <h4>Day 1</h4>
+                    </div>
+                    <div class="step-content">
+                        <h5>Brief<br>Discovery</h5>
+                        <p>You fill our simple project brief.<br>We align on vision in a quick 15-min call.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-circle">
+                        <h4>Day 1–4</h4>
+                    </div>
+                    <div class="step-content">
+                        <h5>Design &<br>Build</h5>
+                        <p>You fill our simple project brief.<br>We align on vision in a quick 15-min call.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-circle">
+                        <h4>Day 4–5</h4>
+                    </div>
+                    <div class="step-content">
+                        <h5>Review &<br>Refine</h5>
+                        <p>You fill our simple project brief.<br>We align on vision in a quick 15-min call.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-circle">
+                        <h4>Day 5–6</h4>
+                    </div>
+                    <div class="step-content">
+                        <h5>Launch &<br>Handoff</h5>
+                        <p>You fill our simple project brief.<br>We align on vision in a quick 15-min call.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-padding" id="faq">
+        <div class="section-header text-center">
+            <h2>Frequently Ask Questions</h2>
+        </div>
+
+        <div class="faq-grid pt-spacing">
+            <!-- FAQ Left Col -->
+            <div class="faq-col">
+                <div class="faq-item active">
+                    <div class="faq-header">
+                        <span class="faq-icon">&minus;</span>
+                        <h4>How do you deliver so fast?</h4>
+                    </div>
+                    <div class="faq-body" style="display: block;">
+                        <p>We have built a streamlined system specifically for Antigravity websites. We move fast
+                            without ever sacrificing quality. Speed is our superpower.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-icon">&plus;</span>
+                        <h4>Do I own my website after delivery?</h4>
+                    </div>
+                    <div class="faq-body">
+                        <p>Yes, absolutely. Once the project is fully paid and handed over, you hold 100% ownership of
+                            the design and source code.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-icon">&plus;</span>
+                        <h4>Do you offer payment plans?</h4>
+                    </div>
+                    <div class="faq-body">
+                        <p>We typically work with a 50% upfront deposit and 50% upon final delivery, but reach out to
+                            discuss custom arrangements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-icon">&plus;</span>
+                        <h4>What happens after I click Get Started?</h4>
+                    </div>
+                    <div class="faq-body">
+                        <p>You'll be directed to a quick onboarding questionnaire, followed by a link to schedule our
+                            kickoff call!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Right Col -->
+            <div class="faq-col">
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-icon">&plus;</span>
+                        <h4>What do I need to provide?</h4>
+                    </div>
+                    <div class="faq-body">
+                        <p>We just need your brand assets (logo, colors), basic copy, and any inspirational websites you
+                            like.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-icon">&plus;</span>
+                        <h4>What if I don't have content ready?</h4>
+                    </div>
+                    <div class="faq-body">
+                        <p>No problem! We can use placeholder text (lorem ipsum) or help you craft basic copy through
+                            our extended packages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-icon">&plus;</span>
+                        <h4>Can you redesign my existing website?</h4>
+                    </div>
+                    <div class="faq-body">
+                        <p>Certainly. We can take your existing website and completely revamp it into an
+                            Antigravity-tier experience.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span class="faq-icon">&plus;</span>
+                        <h4>What makes Nuvora different?</h4>
+                    </div>
+                    <div class="faq-body">
+                        <p>We focus exclusively on ultra-premium, conversion-optimized designs delivered in record time
+                            frames without the bloat.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area (includes Newsletter) -->
+    <div class="footer-wrapper">
+        <div class="bg-glow footer-glow"></div>
+
+        <!-- Newsletter / Get In Touch Box -->
+        <section class="newsletter-box">
+            <div class="newsletter-content">
+                <h2>Get In Touch</h2>
+                <p>Don't wait any longer, take your business to the next level. Contact us today and let's start working
+                    together.</p>
+            </div>
+            <form class="newsletter-form">
+                <div class="input-group">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </section>
+
+        <div class="footer-divider"></div>
+
+        <footer class="footer">
+            <div class="footer-col brand-col">
+                <h3>Get In Touch!</h3>
+                <p>Don't wait any longer, Contact us today and let's start working together.</p>
+                <form class="footer-form">
+                    <div class="input-group dark-input">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                </form>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="index.html#portfolio">Case Study</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html#contact-info">Contact</a></li>
+                    <li><a href="index.html">Privacy Policy</a></li>
+                    <li><a href="index.html">Term of Use</a></li>
+                </ul>
+            </div>
+        </footer>
+        <div class="copyright">
+            <p>&copy; 2026 Nuvora. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuvora - Portfolio & About</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Gradient Effects -->
+    <div class="bg-glow glow-top-left"></div>
+    <div class="bg-glow glow-bottom-right"></div>
+    <div class="bg-glow glow-middle-left"></div>
+
+    <!-- Navigation Area -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-symbol">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" stroke="#8B5CF6" stroke-width="2" />
+                    <path d="M25 75L45 25L55 75L75 25" stroke="white" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <circle cx="45" cy="25" r="4" fill="#00D2FF" />
+                    <circle cx="55" cy="75" r="4" fill="#00D2FF" />
+                </svg>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Work</a>
+            <a href="services.html">Services</a>
+            <a href="about.html" class="active">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search website..." id="siteSearch">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+            <button class="icon-btn mobile-menu-toggle" aria-label="Menu">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hi! I Am<br><span class="highlight">The Founder</span> Of Nuvora</h1>
+            <p>I lead a team of expert designers and developers dedicated to creating visually stunning and
+                high-converting web experiences.</p>
+            <div class="hero-buttons">
+                <a href="contact.html#contact-info" class="btn btn-primary">Hire Me</a>
+                <a href="index.html#portfolio" class="btn btn-outline">Projects</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>05<span>+</span></h3>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>80<span>+</span></h3>
+                    <p>Projects Done</p>
+                </div>
+                <div class="stat-item">
+                    <h3>60<span>+</span></h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>12<span>+</span></h3>
+                    <p>Award Wins</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+            <div class="floating-icons">
+                <div class="icon-bubble diamond"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma"></div>
+                <div class="icon-bubble sketch"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/59/Sketch_Logo.svg" alt="Sketch"></div>
+                <div class="icon-bubble xd"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg" alt="XD"></div>
+                <div class="icon-bubble ps"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+                        alt="Photoshop"></div>
+            </div>
+            <img src="images/founder.jpg" alt="Nuvora Founder" class="hero-img">
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about-us">
+        <div class="about-image-placeholder">
+            <img src="images/about_me.jpg" alt="About Me"
+                style="width: 100%; height: 600px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+        </div>
+
+        <div class="about-content">
+            <h2>About</h2>
+            <p class="about-desc">I am a web designer creating visually stunning and user-friendly websites. My
+                portfolio showcases my ability to design and develop responsive and visually appealing websites. Let's
+                work together to create an online presence that exceeds your expectations.</p>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-target="skill">Skill</button>
+                <button class="tab-btn" data-target="experience">Experience</button>
+                <button class="tab-btn" data-target="education">Education</button>
+            </div>
+
+            <div class="tab-contents">
+                <div class="tab-pane active" id="skill">
+                    <div class="skill-item">
+                        <h4>UX design</h4>
+                        <p>I am a web designer creating visually stunning and user friendly websites. My portfolio
+                            showcases my ability.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Interaction design</h4>
+                        <p>I am a web designer creating visually stunning and user friendly websites. My portfolio
+                            showcases my ability.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Visual design</h4>
+                        <p>I am a web designer creating visually stunning and user friendly websites. My portfolio
+                            showcases my ability.</p>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="experience">
+                    <div class="skill-item">
+                        <h4>Senior Web Designer (2020 - Present)</h4>
+                        <p>Leading design teams to create scalable web solutions across multiple platforms.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>UI/UX Specialist (2018 - 2020)</h4>
+                        <p>Focused on user research, wireframing, and interactive prototypes for tech startups.</p>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="education">
+                    <div class="skill-item">
+                        <h4>Master in Human-Computer Interaction</h4>
+                        <p>Tech University, Graduated 2018 with honors. Specialized in user-centered design
+                            methodologies.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>B.A. Graphic Design</h4>
+                        <p>Creative Arts Institute, Graduated 2016.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="team-header">
+            <h2>Our Team</h2>
+            <p>Innovative Solutions for Elevating Your Digital Presence</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="images/team1.png" alt="Moazam Ali">
+                </div>
+                <h4>Moazam Ali</h4>
+                <p>Developer</p>
+            </div>
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
+                        alt="Evelyn">
+                </div>
+                <h4>Evelyn</h4>
+                <p>Business Analytics</p>
+            </div>
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80"
+                        alt="Robert Langston">
+                </div>
+                <h4>Robert Langston</h4>
+                <p>Business Developer</p>
+            </div>
+            <div class="team-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80"
+                        alt="Alexa">
+                </div>
+                <h4>Alexa</h4>
+                <p>Digital Marketer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area (includes Newsletter) -->
+    <div class="footer-wrapper">
+        <div class="bg-glow footer-glow"></div>
+
+        <!-- Newsletter / Get In Touch Box -->
+        <section class="newsletter-box">
+            <div class="newsletter-content">
+                <h2>Get In Touch</h2>
+                <p>Don't wait any longer, take your business to the next level. Contact us today and let's start working
+                    together.</p>
+            </div>
+            <form class="newsletter-form">
+                <div class="input-group">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </section>
+
+        <div class="footer-divider"></div>
+
+        <footer class="footer">
+            <div class="footer-col brand-col">
+                <h3>Get In Touch!</h3>
+                <p>Don't wait any longer, Contact us today and let's start working together.</p>
+                <form class="footer-form">
+                    <div class="input-group dark-input">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                </form>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="index.html#portfolio">Case Study</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html#contact-info">Contact</a></li>
+                    <li><a href="index.html">Privacy Policy</a></li>
+                    <li><a href="index.html">Term of Use</a></li>
+                </ul>
+            </div>
+        </footer>
+        <div class="copyright">
+            <p>&copy; 2026 Nuvora. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
