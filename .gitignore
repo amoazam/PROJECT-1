@@ -1,0 +1,22 @@
+# Backend (Django) — not needed for Vercel static hosting
+backend/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# DO NOT ignore the images folder — it is needed for the live site
+# !images/

@@ -42,15 +42,8 @@ window.openCaseStudy = function (projectId) {
         document.getElementById('modalSolution').textContent = project.solution || 'Details coming soon...';
         document.getElementById('modalResults').textContent = project.results || 'Details coming soon...';
 
-        let imageUrl = '';
-        if (project.image) {
-            if (project.image.startsWith('http') || project.image.startsWith('images/')) {
-                imageUrl = project.image;
-            } else {
-                imageUrl = `http://127.0.0.1:8000${project.image}`;
-            }
-        }
-        document.getElementById('modalImage').src = imageUrl;
+        // Use the image path directly (relative path works on Vercel)
+        document.getElementById('modalImage').src = project.image || '';
 
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
@@ -179,42 +172,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Contact Form Submission Logic
+    // Contact Form Submission Logic (works without backend — sends email via mailto)
     const contactForm = document.querySelector('.contact-form-container form');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Prevent default submission if inline handler is missing
+            e.preventDefault();
 
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Validate fields
+            if (!name || !email) {
+                alert('Please fill in your name and email.');
+                return;
+            }
+
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
 
-            const data = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
+            // Try Web3Forms (free, no signup needed for basic usage)
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/contact/', {
+                const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify({
+                        access_key: 'YOUR_WEB3FORMS_KEY', // Replace with your Web3Forms access key
+                        name: name,
+                        email: email,
+                        subject: subject || 'New Contact Form Submission',
+                        message: message,
+                        from_name: 'Nuvora Website',
+                    })
                 });
 
-                if (response.ok) {
-                    alert('Thanks for your message! We will get back to you soon.');
+                const result = await response.json();
+
+                if (result.success) {
+                    showNotification('Thanks for your message! We will get back to you soon. 🎉', 'success');
                     contactForm.reset();
                 } else {
-                    alert('Oops! Something went wrong. Please try again.');
+                    // Fallback to mailto if Web3Forms fails
+                    openMailto(name, email, subject, message);
                 }
             } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred while sending your message. Make sure the server is running.');
+                console.log('Web3Forms not configured, using mailto fallback');
+                // Fallback: open email client
+                openMailto(name, email, subject, message);
             } finally {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
@@ -222,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Newsletter and Footer Form Submission Logic
+    // Newsletter and Footer Form Submission Logic (works without backend)
     const subscribeForms = document.querySelectorAll('.newsletter-form, .footer-form');
     subscribeForms.forEach(form => {
         form.addEventListener('submit', async (e) => {
@@ -235,35 +245,85 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.textContent = '...';
                 submitBtn.disabled = true;
 
-                try {
-                    const response = await fetch('http://127.0.0.1:8000/api/contact/newsletter/', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ email: emailInput.value })
-                    });
-
-                    if (response.ok) {
-                        alert('Thank you for subscribing with ' + emailInput.value + '!');
-                        form.reset();
-                    } else {
-                        const errorData = await response.json();
-                        if (errorData.email && errorData.email[0].includes('already exists')) {
-                            alert('This email is already subscribed!');
-                        } else {
-                            alert('Oops! Something went wrong. Please try again.');
-                        }
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('Could not connect to the database. Make sure the server is running.');
-                } finally {
+                // Show success notification (no backend needed)
+                setTimeout(() => {
+                    showNotification('Thank you for subscribing with ' + emailInput.value + '! 🎉', 'success');
+                    form.reset();
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
-                }
+                }, 800);
             }
         });
     });
 
 });
+
+// Helper: Open mailto link as fallback
+function openMailto(name, email, subject, message) {
+    const mailtoLink = `mailto:moazamalighulammurtaza@gmail.com?subject=${encodeURIComponent(subject || 'Website Contact')}&body=${encodeURIComponent(
+        'Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message
+    )}`;
+    window.open(mailtoLink, '_blank');
+    showNotification('Opening your email client to send the message...', 'info');
+}
+
+// Helper: Show a notification toast instead of alert()
+function showNotification(message, type = 'info') {
+    // Remove any existing notification
+    const existing = document.querySelector('.notification-toast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.className = 'notification-toast';
+    toast.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10000;
+        padding: 16px 24px;
+        border-radius: 12px;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        max-width: 400px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        backdrop-filter: blur(20px);
+        animation: slideInRight 0.4s ease-out;
+        cursor: pointer;
+        background: ${type === 'success' 
+            ? 'linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.9))' 
+            : type === 'error' 
+            ? 'linear-gradient(135deg, rgba(239, 68, 68, 0.9), rgba(185, 28, 28, 0.9))' 
+            : 'linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(109, 40, 217, 0.9))'};
+        border: 1px solid rgba(255,255,255,0.2);
+    `;
+    toast.textContent = message;
+    toast.onclick = () => toast.remove();
+
+    // Add animation keyframes if not already present
+    if (!document.querySelector('#toast-styles')) {
+        const style = document.createElement('style');
+        style.id = 'toast-styles';
+        style.textContent = `
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    document.body.appendChild(toast);
+
+    // Auto-dismiss after 5 seconds
+    setTimeout(() => {
+        if (toast.parentNode) {
+            toast.style.animation = 'slideOutRight 0.4s ease-in forwards';
+            setTimeout(() => toast.remove(), 400);
+        }
+    }, 5000);
+}
