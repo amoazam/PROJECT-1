@@ -7,7 +7,7 @@ let allProjects = [
         challenge: "They needed a digital sanctuary that could handle high traffic while maintaining a premium, calming aesthetic.",
         solution: "We built an ethereal floating UI with Django and React, optimizing every interaction for conversion and user peace of mind.",
         results: "200% increase in bookings within the first month of launch.",
-        image: "images/lumina_health_new.png"
+        image: "./lumina_health_new.png"
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ let allProjects = [
         challenge: "A crowded food delivery market required a standout visual identity and seamless mobile experience.",
         solution: "Implementation of glassmorphism and micro-animations to create a 'delicious' UI that keeps users engaged.",
         results: "Average session duration increased by 45%.",
-        image: "images/urbanbite.png"
+        image: "./urbanbite.png"
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ let allProjects = [
         challenge: "Converting technical complexity into a simple, high-converting landing page.",
         solution: "A focus on clean typography and structured data visualization built with Python and React.",
         results: "30% reduction in bounce rate on the pricing page.",
-        image: "images/apex_hub_new.png"
+        image: "./apex_hub_new.png"
     }
 ];
 
